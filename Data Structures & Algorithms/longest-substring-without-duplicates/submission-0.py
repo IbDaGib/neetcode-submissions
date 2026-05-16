@@ -1,0 +1,22 @@
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        hash = {}
+        l = 0
+        res = 0
+
+        for r in range(len(s)):
+            if s[r] in hash:
+                l = max(hash[s[r]] + 1, l)
+            hash[s[r]] = r
+            res = max(res, r-l + 1)
+        
+            
+            
+        return res
+        
+#zxyz
+#^^
+#zxyz
+#^ ^
+#zxyz
+# ^ ^
